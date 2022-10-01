@@ -1,31 +1,35 @@
-import java.io.*;
 import java.util.*;
-import java.util.StringTokenizer;
-
 public class Test2738 {
-    public static void main(String[] args) throws IOException{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();//Integer.parseInt(st.nextToken());
-        int M = sc.nextInt();//Integer.parseInt(st.nextToken());
+
+        int N = sc.nextInt();
+        int M = sc.nextInt();
 
         int[][] A = new int[N][M];
         int[][] B = new int[N][M];
+        int[][] result = new int[N][M];
+
         for (int i = 0; i <N; i++) {
             for (int j = 0; j <M; j++) {
-                A[i][j] = sc.nextInt();//Integer.parseInt(st.nextToken());
-            }
-            for(int k=0; k<N; k++){
-
+                A[i][j] = sc.nextInt();
             }
         }
-        int[][] answer = new int[N][M];
         for (int i = 0; i <N; i++) {
-            for (int j = 0; j < M; j++) {
-                answer[i][j] = A[i][j]+B[i][j];
+            for (int j = 0; j <M; j++) {
+                B[i][j] = sc.nextInt();
             }
         }
-        System.out.println(Arrays.toString(answer));
+        for (int i = 0; i <N; i++) {
+            for (int j = 0; j <M; j++) {
+                result[i][j]=A[i][j]+B[i][j];
+            }
+        }
+        for (int i = 0; i <N ; i++) {
+            StringBuilder sb = new StringBuilder();
+            for (int j = 0; j <M; j++) {
+                sb.append(result[i][j]).append(" ");
+            }System.out.println(sb);
+        }
     }
 }
