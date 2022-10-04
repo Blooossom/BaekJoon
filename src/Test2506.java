@@ -12,11 +12,10 @@ public class Test2506 {
         for (int i = 0; i < N; i++) {
             score[i] = Integer.parseInt(st.nextToken());
         }
-        int count;
+        int count=0;
         int result = 0;
-        for (int i = 1; i < N; i++) {//1 0 1 1 1 0 0 1 1 0
-            if(score[0]==1){count = 1;}else{count = 0;}// count = 1;
-            if (score[i] == 1) {
+        for (int i = 1; i < N+1; i++) {//1 0 1 1 1 0 0 1 1 0
+            if (score[i-1] == 1) {
                 if (score[i] == score[i - 1]) {
                     count ++;
                 }else{

@@ -1,0 +1,19 @@
+package bronze.bronze5;
+import java.io.*;
+import java.util.StringTokenizer;
+
+public class Test20254 {
+    public static void main(String[] args)throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        int ur = Integer.parseInt(st.nextToken());
+        int tr = Integer.parseInt(st.nextToken());
+        int uo = Integer.parseInt(st.nextToken());
+        int to = Integer.parseInt(st.nextToken());
+
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(56*ur+24*tr+14*uo+6*to);
+        System.out.println(sb);
+    }
+}
