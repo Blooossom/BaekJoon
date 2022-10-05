@@ -1,3 +1,5 @@
+package bronze.bronze3;
+
 import java.io.*;
 import java.util.StringTokenizer;
 
@@ -14,16 +16,13 @@ public class Test2506 {
         }
         int count=0;
         int result = 0;
-        for (int i = 1; i < N+1; i++) {//1 0 1 1 1 0 0 1 1 0
-            if (score[i-1] == 1) {
-                if (score[i] == score[i - 1]) {
-                    count ++;
-                }else{
-                    count ++;}
-            } else {
+        for (int i = 0; i < score.length; i++) {//1 0 1 1 1 0 0 1 1 0
+            if(score[i]==1){
+                count++;
+            }else{
                 count=0;
             }
-            result += count; //[0] 1/[1] 0/[[2] 1/[3]
+            result += count;
         }
 
         System.out.println(result);
