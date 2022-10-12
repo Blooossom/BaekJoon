@@ -10,7 +10,7 @@ public class Test14928 {
         BigInteger A = new BigInteger("20000303");
         StringBuilder sb = new StringBuilder();
         sb.append(N.remainder(A));
-
+        System.out.print(sb);
     }
 
 }
