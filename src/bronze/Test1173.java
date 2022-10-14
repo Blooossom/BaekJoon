@@ -27,10 +27,6 @@ public class Test1173 {
                 }
             }
             }
-        if(count!=N){
-            System.out.println(-1);
-        }else if(count==N){
-            System.out.println(time);
-        }
+
     }
 }
