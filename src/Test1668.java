@@ -13,22 +13,36 @@ public class Test1668 {
         int left = 1;
         int right = 1;
         int i = 1;
-        while(i==arr.length-1){
-            if(arr[i-1]<arr[i]){
+        while(true) {
+            if(i>arr.length-1){
+                break;
+            }
+            if (arr[i - 1] < arr[i]) {
                 left++;
-                i = i;
-            }else{
-                i++;
             }
+            i++;
+
         }
-        int j = 1;
-        while (j == arr.length - 1) {
-            if(arr[arr.length-j]>arr[arr.length-1-j]){
-                right++;
-                j=j;
-            }else{
-                j++;
+        int[] reverse = new int[N];
+        for (int j = 0; j < reverse.length; j++) {
+            reverse[j]=arr[arr.length-1-j];
+        }
+        int j = 0;
+        int k = 0;
+        System.out.println(Arrays.toString(reverse));
+        while (true) {
+            if(j>reverse.length-1){
+                break;
             }
+            if(reverse[j]<reverse[k]){
+                right++;
+                j=k;
+            }
+            k++;
+            if(k>arr.length-1){
+                break;
+            }
+
         }
         System.out.println(left);
         System.out.println(right);
