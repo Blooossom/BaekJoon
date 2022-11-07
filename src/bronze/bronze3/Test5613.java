@@ -1,3 +1,5 @@
+package bronze.bronze3;
+
 import java.io.*;
 import java.util.ArrayList;
 
@@ -14,10 +16,11 @@ public class Test5613 {
                 break;
             }
         }
+        int answer = list1.get(0);
         for (int i = 0; i <list2.size()-1; i++) {
-            calc(list1.get(i),list2.get(i),list1.get(i+1));
-
+            answer = calc(answer, list2.get(i),list1.get(i+1));
         }
+        System.out.println(answer);
     }
     public static int calc(int a, String input, int b){
         if (input.equals("+")) {
