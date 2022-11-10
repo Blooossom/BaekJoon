@@ -20,7 +20,7 @@ public class Test3058 {
                     }
                 }
             }
-            System.out.println(sum + "\s"+min);
+            System.out.println(sum +min);
         }
     }
 }
