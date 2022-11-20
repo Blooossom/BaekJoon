@@ -1,4 +1,4 @@
-package gold;
+package gold.gold1;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
