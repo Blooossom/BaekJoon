@@ -1,4 +1,4 @@
-package Unsolved;
+package silver.silver4;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -25,21 +25,21 @@ public class Test10825 {
             public int compare(Subject o1, Subject o2) {
                 if (o1.korean > o2.korean) {
                     return -1;
-                }else if(o1.korean==o2.korean){
-                    if(o1.eng>o2.eng){
+                } else if (o1.korean == o2.korean) {
+                    if(o1.eng > o2.eng){
                         return 1;
-                    } else if (o1.eng == o2.eng) {
+                    } else if (o1.eng == o2.eng){
                         if (o1.math > o2.math) {
                             return -1;
-                        } else if (o1.math==o2.math) {
-                            return o2.name.compareTo(o1.name);
-                        }else{
+                        } else if(o1.math == o2.math) {
+                            return o1.name.compareTo(o2.name);
+                        } else {
                             return 1;
                         }
-                    }else{
+                    } else {
                         return -1;
                     }
-                }else{
+                } else {
                     return 1;
                 }
             }
@@ -56,7 +56,7 @@ public class Test10825 {
         int math;
         int eng;
 
-        public Subject(String name, int korean, int math, int eng) {
+        public Subject(String name, int korean,  int eng, int math) {
             this.name = name;
             this.korean = korean;
             this.math = math;
