@@ -16,8 +16,6 @@ public class Test2056_작업 {
             int p = Integer.parseInt(st.nextToken());
             int q = Integer.parseInt(st.nextToken());
             dp[i] = p;
-            long max = 0;
-            boolean[] idx = new boolean[T];
             for (int j = 0; j < q; j++) {
                 int k = Integer.parseInt(st.nextToken());
                 dp[i] = Math.max(dp[i], dp[k] + p);

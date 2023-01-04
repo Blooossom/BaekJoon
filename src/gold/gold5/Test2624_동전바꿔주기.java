@@ -21,6 +21,19 @@ public class Test2624_동전바꿔주기 {
             Coin coin = new Coin(p, q);
             list.add(coin);
         }
+        Collections.sort(list, new Comparator<Coin>() {
+            @Override
+            public int compare(Coin o1, Coin o2) {
+                if (o1.price > o2.price) {
+                    return -1;
+                } else if (o1.price == o2.price) {
+                    return 0;
+                }
+                else {
+                    return 1;
+                }
+            }
+        });
         for (int i = 0; i < count; i++) {
             int temp = list.get(i).price; //현재 동전 가격
             for (int j = Money; j >= temp; j--) {
