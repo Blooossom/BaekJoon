@@ -12,7 +12,8 @@ public class Test17952_과제는끝나지않아 {
             st = new StringTokenizer(br.readLine());
             int p = Integer.parseInt(st.nextToken());
             if (p == 0) {
-                continue;
+                Submit submit = new Submit(0, 1);
+                stack.push(submit);
             }
             else {
                 int A = Integer.parseInt(st.nextToken());
