@@ -4,32 +4,27 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 public class TestPage {
+    static long[] dp;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        MyStack<Integer> stack = new MyStack<>();
-        int[] arr = {1, 3, 5, 4, 0, 0, 7, 0, 0, 6};
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == 0) {
-                stack.pop();
-            }
-            else {
-                stack.push(arr[i]);
-            }
+        int N = Integer.parseInt(br.readLine());
+        dp = new long[N + 1];
+        if (dp.length == 1) {
+            System.out.println(0);
+            return;
         }
-        int sum = 0;
-        while (!stack.stack.isEmpty()) {
-            sum += stack.pop();
-        }
-        System.out.println(sum);
-    }
-    static class MyStack<T> {
-        private ArrayList<T> stack = new ArrayList<T>();
+        System.out.println(Factorial(N));
 
-        public void push(T item) {
-            stack.add(item);
+    }
+    static long Factorial(int n) {
+        if (n == 1 || n == 0) {
+            return dp[n] = 1;
         }
-        public T pop(){
-            return stack.isEmpty()? null:stack.remove(stack.size() - 1);
+        if (dp[n] != 0) {
+            return dp[n];
+        }
+        else {
+            return dp[n] = n * Factorial(n - 1);
         }
     }
 }
