@@ -6,15 +6,25 @@ import java.util.*;
 public class TestPage {
     static long[] dp;
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int N = Integer.parseInt(br.readLine());
-        dp = new long[N + 1];
-        if (dp.length == 1) {
-            System.out.println(0);
-            return;
-        }
-        System.out.println(Factorial(N));
 
+        StringBuilder sb = new StringBuilder();
+        sb.append(1);
+        sb.append(2);
+        sb.append(1);
+        sb.append(1);
+        System.out.println(sb);
+        String res = sb.toString();
+        System.out.println(sb);
+        String rev = sb.reverse().toString();
+        System.out.println(sb);
+        System.out.println(res);
+        System.out.println(rev);
+
+
+
+
+        // 12가 처음 StringBuilder면 temp에는 21이들어가고,
+        System.out.println(res.equals(rev));
     }
     static long Factorial(int n) {
         if (n == 1 || n == 0) {
