@@ -5,36 +5,18 @@ import java.util.*;
 
 public class TestPage {
     static long[] dp;
-    public static void main(String[] args) throws IOException {
-
-        StringBuilder sb = new StringBuilder();
-        sb.append(1);
-        sb.append(2);
-        sb.append(1);
-        sb.append(1);
-        System.out.println(sb);
-        String res = sb.toString();
-        System.out.println(sb);
-        String rev = sb.reverse().toString();
-        System.out.println(sb);
-        System.out.println(res);
-        System.out.println(rev);
-
-
-
-
-        // 12가 처음 StringBuilder면 temp에는 21이들어가고,
-        System.out.println(res.equals(rev));
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        dp = new long[n+1];
+        dp[1] = 1;
+        dp[2] = 1;
+        System.out.println(Fibonacci(n));
     }
-    static long Factorial(int n) {
-        if (n == 1 || n == 0) {
-            return dp[n] = 1;
+    private static long Fibonacci(int n){
+        for (int i = 3; i <=n; i++) {
+            dp[i] = dp[i - 1] + dp[i - 2];
         }
-        if (dp[n] != 0) {
-            return dp[n];
-        }
-        else {
-            return dp[n] = n * Factorial(n - 1);
-        }
+        return dp[n];
     }
 }
