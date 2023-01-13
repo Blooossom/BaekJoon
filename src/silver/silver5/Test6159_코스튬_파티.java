@@ -1,3 +1,5 @@
+package silver.silver5;
+
 import java.io.*;
 import java.util.Arrays;
 import java.util.StringTokenizer;
@@ -14,23 +16,13 @@ public class Test6159_코스튬_파티 {
             arr[i] = Integer.parseInt(br.readLine());
         }
         Arrays.sort(arr);
-        int sp = 0;
-        int ep = arr.length - 1;
         int count = 0;
-        for (int i = sp; i < arr.length - 1; i++) {
-            while (true) {
-                if (ep == 1) {
-                    break;
-                }
-                if (arr[i] + arr[ep] > S) {
-                    ep--;
-                }
-                else {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] + arr[j] <= S) {
                     count++;
-                    ep--;
                 }
             }
-            ep = arr.length - 1;
         }
         System.out.println(count);
 

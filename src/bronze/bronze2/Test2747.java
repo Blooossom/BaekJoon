@@ -1,25 +1,26 @@
 package bronze.bronze2;
 import java.io.*;
+import java.util.Arrays;
+
 public class Test2747 {
+    static long[] dp;
     public static void main(String[] args) throws IOException{
         BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
-        fibonacci(N);
-    }
-    public static void fibonacci(int input){
-        int a = 0;
-        int b = 1;
-        int sum = 0;
-        if(input==1){
-            sum = 1;
-        }else {
-            for (int i = 2; i <= input; i++) {
-                sum = a + b;
-                a = b;
-                b = sum;
-            }
-        }
-            System.out.print(sum);
+        dp = new long[N];
+        System.out.println(fibonacci(N));
+        System.out.println(Arrays.toString(dp));
 
+    }
+    static long fibonacci(int param){
+        if (param == 0 || param == 1) {
+            return dp[param] = 1;
+        }
+        if (dp[param] != 0) {
+            return dp[param];
+        }
+        else {
+            return dp[param] = fibonacci(param - 1) + fibonacci(param - 2);
+        }
     }
 }
