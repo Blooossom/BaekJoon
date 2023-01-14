@@ -1,3 +1,5 @@
+package Unsolved;
+
 import java.io.*;
 public class Test1343_폴리오미노 {
     public static void main(String[] args) throws IOException{

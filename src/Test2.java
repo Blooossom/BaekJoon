@@ -1,28 +1,28 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Stack;
+import java.util.*;
 
 public class Test2 {
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int T = Integer.parseInt(br.readLine());
-        Stack<Integer> stack = new Stack<>();
-        for (int i = 0; i < T; i++) {
-            int input = Integer.parseInt(br.readLine());
-            if (input == 0) {
-                stack.pop();
-            } else {
-                stack.push(input);
-            }
-        }
-        int sum = 0;
-        while (!stack.isEmpty()) {
-            sum += stack.pop();
-        }
-        System.out.println(sum);
-        ArrayList<Integer> list = new ArrayList<>();
+        HashSet<List<Character>> set = new HashSet<>();
+        List<Character> list = new ArrayList<>();
+        int[] arr = new int[26];
+        System.out.println(65 - 'A');
+        char[] arr1 = {'c', 'a', 'g'};
+        Arrays.sort(arr1);
+        char[] arr2 = {'g', 'a', 'c'};
+        Arrays.sort(arr2);
+        System.out.println(arr1.equals(arr2));
 
+        list.add('c');
+        list.add('a');
+        list.add('g');
+        set.add(list);
+        list.remove(0);
+        list.add('c');
+        System.out.println(set.contains(list));
+        set.add(list);
+        System.out.println(set);
     }
 }
