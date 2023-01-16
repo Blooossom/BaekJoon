@@ -1,7 +1,6 @@
-package Unsolved;
+package silver.silver1;
 
 import java.io.*;
-import java.util.Arrays;
 
 public class Test1522_문자열_교환 {
     public static void main(String[] args) throws IOException{
@@ -18,21 +17,23 @@ public class Test1522_문자열_교환 {
                 arr[i] = 1;
             }
         }
-        System.out.println(Arrays.toString(arr));
         int sum = 0;
         for (int i = 0; i < count; i++) {
             sum += arr[i];
         }
         int result = 1001;
-
         result = Math.min(result, sum);
-        for (int i = 1; i < arr.length - count - 1; i++) {
-            if (i == arr.length - count - 2) {
-                sum += arr[arr.length - 1] + arr[0] - arr[i - 1];
-            } else {
-                sum += arr[i + count - 1] - arr[i - 1];
-                result = Math.min(result, sum);
+        for (int i = 1; i < arr.length; i++) {
+            if (i + count - 1 >= arr.length) {
+                sum -= arr[i - 1];
+                sum += arr[i + count - 1 - arr.length];
+
             }
+            else {
+                sum -= arr[i - 1];
+                sum += arr[i + count - 1];
+            }
+            result = Math.min(result, sum);
         }
         System.out.println(result);
 
