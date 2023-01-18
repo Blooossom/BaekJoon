@@ -33,7 +33,5 @@ public class Test2230_수_고르기 {
             }
         }
         System.out.println(result);
-
-
     }
 }
