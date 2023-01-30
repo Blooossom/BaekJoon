@@ -1,2 +1,2 @@
 # BaekJoon
-Resole Algorithm
+Resolve Algorithm
