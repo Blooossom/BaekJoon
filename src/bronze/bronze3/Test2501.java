@@ -12,15 +12,11 @@ public class Test2501 {
         int N = Integer.parseInt(st.nextToken());
         int K = Integer.parseInt(st.nextToken());
         ArrayList<Integer> list = new ArrayList<>();
-        for (int i = 1; i <=N; i++) {
-            if(N%i==0){
+        for (int i = 1; i <= N; i++) {
+            if(N % i == 0){
                 list.add(i);
             }
         }
-        if(K>list.size()){
-            System.out.println(0);
-        }else {
-            System.out.println(list.get(K - 1));
-        }
+        System.out.println(K > list.size()? 0:list.get(K - 1));
     }
 }
