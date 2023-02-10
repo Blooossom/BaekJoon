@@ -1,8 +1,10 @@
+package silver.silver2;
+
 import java.io.*;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Test15666_N과M_12 {
+public class Test15664_N과M_10 {
     public static int N, M, arr[], result[];
     public static StringBuilder sb = new StringBuilder();
     public static void main(String[] args) throws IOException{
@@ -12,13 +14,14 @@ public class Test15666_N과M_12 {
         M = Integer.parseInt(st.nextToken());
         arr = new int[N];
         result = new int[M];
-
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < N; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
         }
         Arrays.sort(arr);
-        dfs(0, 0);
+
+        dfs(0,0);
+
         System.out.println(sb);
     }
     public static void dfs(int sp, int depth) {
@@ -38,7 +41,7 @@ public class Test15666_N과M_12 {
             else {
                 past = now;
                 result[depth] = arr[i];
-                dfs(i, depth + 1);
+                dfs(i + 1, depth + 1);
             }
         }
     }

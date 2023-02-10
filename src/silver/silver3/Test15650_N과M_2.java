@@ -1,37 +1,36 @@
+package silver.silver3;
+
 import java.io.*;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Test15655_N과M_6 {
-    public static int N, M, arr[], back[];
+public class Test15650_N과M_2 {
+    public static int N, M;
+    public static int[] arr;
     public static StringBuilder sb = new StringBuilder();
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
-        arr = new int[N];
-        back = new int[M];
-        st = new StringTokenizer(br.readLine());
-        for (int i = 0; i < N; i++) {
-            arr[i] = Integer.parseInt(st.nextToken());
-        }
-        Arrays.sort(arr);
-        dfs(0, 0);
-        System.out.println(sb);
+        arr = new int[M];
 
+        dfs(1, 0);
+
+        System.out.println(sb);
     }
     public static void dfs(int sp, int depth) {
         if (depth == M) {
-            for (int val:back) {
-                sb.append(val).append(' ');
+            for (int val:arr) {
+                sb.append(val)
+                        .append(' ');
             }
             sb.append('\n');
             return;
         }
-        for (int i = sp; i < N; i++) {
-            back[depth] = arr[i];
-            dfs(i + 1, depth + 1);
+
+        for (int i = sp; i <= N; i++) {
+           arr[depth] = i;
+           dfs(i + 1, depth + 1);
         }
     }
 }
