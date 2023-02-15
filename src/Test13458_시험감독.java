@@ -21,6 +21,7 @@ public class Test13458_시험감독 {
         C = Integer.parseInt(st.nextToken());
 
         Solution();
+
         System.out.println(sb);
 
     }

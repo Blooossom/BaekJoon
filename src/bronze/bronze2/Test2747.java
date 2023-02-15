@@ -9,7 +9,6 @@ public class Test2747 {
         int N = Integer.parseInt(br.readLine());
         dp = new long[N];
         System.out.println(fibonacci(N));
-        System.out.println(Arrays.toString(dp));
 
     }
     static long fibonacci(int param){
